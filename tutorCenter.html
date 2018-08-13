@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equivmetahttp-equiv="x-ua-compatible"content="IE=7" /> 
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>辅导中心查询</title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="head wraper clearfix">
+			<a href="index.html"class="logoBox left clearfix">
+				<img src="images/首页切图/toplogo.png" alt="logo" class="left"/>
+				<span class="left">基业长存企业大学联盟</span>
+			</a>
+			<div class="handleBox right">
+				<a href="#" title="成员机构入口">成员机构入口</a>
+				<a href="#" title="在线报名">在线报名</a>
+				<a href="#" title="投诉建议">投诉建议</a>
+			</div>
+		</div>
+		<div class="nav wraper clearfix">
+			<div class="navBox left" id="navBox">
+				<a href="index.html" title="首页" >首页</a>
+				<a href="menber.html" title="成员机构" >成员机构</a>
+				<a href="intellectual.html" title="知识库">知识库</a>
+				<a href="dynamic .html" title="动态" >动态</a>
+				<a href="certificate.html" title="证书查询">证书查询</a>
+				<a href="tutorCenter.html" title="辅导中心查询" class="on">辅导中心查询</a>
+				<a href="aboutUs.html" title="关于我们">关于我们</a>
+			</div>
+			<div class="mediaBox right">
+				<a href="#" class="media1" title="新浪微博"></a>
+				<a href="#" class="media2" title="qq微博"></a>
+				<a href="#" class="media3" title="QQ"></a>
+				<a href="#" class="media4" title="微信"></a>
+			</div>	
+		</div>
+		<div class="hrblue">
+			<div class="bluehr wraper"></div>
+		</div>
+		<div class="section reSearch wraper">
+			<div class="relative">
+				<form class="searchBox" id="searchBox1">
+					<h3>辅导中心查询</h3>
+					<input type="text" list="mydata" placeholder="请输入公司全名" id="comBox" name="companyName" />
+						<datalist id="mydata">
+						    <option value="浙江大同有限公司">
+						    <option value="浙江同花顺有限公司">
+						    <option value="浙江大亨有限公司">
+						    <option value="浙江邵宁有限公司">
+						    <option value="浙江顺有限公司">
+						</datalist>
+					<input type="text" placeholder="请输入公司编号" id="serialBox" />
+					<div class="btnBox"><a href="#" id="searchBtn"></a> </div>
+				</form>
+			</div>
+			<div class="queryBox" id="marginMore">
+				<a href="javascript:;" class="reQuery"><span class="go-icon"></span><span class="go-text">重新查询</span></a>
+				<div class="resultBox">
+					<ul>
+						<li>
+							公司全名：<span id="comname">浙江同花顺有限公司</span>
+						</li>
+						<li>
+							公司编号：<span id="comserial"></span>
+						</li>
+						<li>
+							查询结果：<span id="comresult">授权公司</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="footerBox wraper">
+				<div class="upBox clearfix">
+					<div class="leftbox left">
+						<img src="images/首页切图/footerlogo.png" alt="bottomlogo"/>
+						<div class="mediaBox">
+							<a href="#" class=" media1"></a>
+							<a href="#" class=" media2"></a>
+							<a href="#" class=" media3"></a>
+							<a href="#" class=" media4"></a>
+						</div>
+					</div>
+					<div class="middleBox left">
+						<address>777南方海港岛大道</address>
+						<address>750套房，佛罗里达州坦帕33602 USA</address>
+						<p>电话：+18137696500</p>
+					</div>
+					<div class="rightBox left">
+						<div class="inforBox">
+							<a href="aboutUs.html" title="关于我们">关于我们</a>
+							<a href="menber.html" title="成员机构">成员机构</a>
+							<a href="intellectual.html" title="知识库">知识库</a>
+							<a href="dynamic .html" title="动态">动态</a>
+							<a href="certificate.html" title="证书查询">证书查询</a>
+							<a href="tutorCenter.html" title="辅导中心查询">辅导中心查询</a>
+						</div>
+					</div>
+				</div>
+				<div class="downBox">
+					<div>
+						<a href="#" title="辅导中心入口 ">辅导中心入口 </a>|
+						<a href="#" title="总部审核入口">总部审核入口 </a>|
+						<a href="#" title="管理员入口">管理员入口</a>
+					</div>
+					<p class="copy">© 基业长存企业大学联盟版权所有 浙ICP备XXXXXX号 </p>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<script type="text/javascript" src="js/placeholder.js" ></script>
+		<script>
+			$(function(){
+				$('#searchBtn').click(function(){
+					$('.relative').hide();
+					$('.queryBox').show();
+					$(this).hide();
+				})
+				$('.reQuery').click(function(){
+					$('.queryBox').hide();
+					$('.relative').show();
+					$('#searchBtn').show()
+				})
+			})
+		</script>
+		<script>
+			function adjust(){
+				var screenH = window.screen.height;
+				var h = $(window).height();
+				var reh = h - $('.head').outerHeight(true)-$('.nav').outerHeight(true)-$('.hrblue').outerHeight(true)-$('.footer').outerHeight(true);
+				$('.relative').css('height',reh);
+				var sh = $('.reSearch h3').outerHeight(true) + $('#comBox').outerHeight(true) + $('#serialBox').outerHeight(true) + $('.btnBox').outerHeight(true);
+				$('.searchBox').css('height',sh)
+				if(screenH >= 1000 ){
+					$('.queryBox').css('height',reh);
+				}else{
+					$('.queryBox').css('margin','20px auto')
+				}
+			}
+			adjust();
+			$(window).resize(function(){
+adjust();
+})
+		</script>
+	</body>
+</html>
